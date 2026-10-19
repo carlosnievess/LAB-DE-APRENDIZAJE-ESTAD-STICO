@@ -15,6 +15,7 @@ Estas reglas se aplican al código Python y a los notebooks. La lista reúne tod
 - `scipy.stats`, incluido `from scipy.stats import norm`
 - `sklearn.linear_model`: `LinearRegression`, `Ridge`, `Lasso` y `LogisticRegression`
 - `sklearn.svm`: `SVC`
+- `sklearn.neural_network`: `MLPClassifier`
 - `sklearn.decomposition`: `PCA` (importado como `PCA as RandomizedPCA`, como en clase)
 - `sklearn.model_selection`: `train_test_split`, `LeaveOneOut`, `KFold` y `GridSearchCV`
 - `sklearn.metrics`: `mean_squared_error`, `roc_auc_score`, `classification_report` y `confusion_matrix`
@@ -242,6 +243,27 @@ yfit = model.predict(Xtest)
 - Para la matriz de confusión: `mat = confusion_matrix(ytest, yfit)` y `sns.heatmap(mat.T, square=True, annot=True, fmt="d", cbar=False, xticklabels=..., yticklabels=...)`.
 - Para mostrar imágenes: `fig, ax = plt.subplots(filas, columnas)`, un ciclo `for i, axi in enumerate(ax.flat)` con `axi.imshow(..., cmap="bone")` y `axi.set(xticks=[], yticks=[], xlabel=...)`. Para marcar errores: `color="black" if yfit[i] == ytest[i] else "red"`.
 - `GridSearchCV` y `make_pipeline` solo se usan en esta estructura. En los demás ejercicios se conservan `Pipeline` y el ciclo explícito de `KFold`.
+
+## Perceptrón multicapa
+
+Sigue `Lab - C3.ipynb`. Se separa con `train_test_split(X, y, test_size=0.3, random_state=42)` y el modelo va dentro del `Pipeline` con el `preprocessor`:
+
+```python
+pipeline = Pipeline(
+    steps=[
+        ("preprocessor", preprocessor),
+        ("model", MLPClassifier(random_state=42))
+    ]
+)
+
+pipeline.fit(X_train, y_train)
+prob = pipeline.predict_proba(X_test)[:, 1]
+y_pred = (prob >= 0.5).astype(int)
+```
+
+- Las métricas se calculan a mano con TP, TN, FP y FN, más `roc_auc_score`, `classification_report` y el heatmap de `confusion_matrix`.
+- Hiperparámetros usados: `hidden_layer_sizes`, `activation` (`"relu"`, `"tanh"`, `"logistic"`), `solver` (`"adam"`, `"sgd"`, `"lbfgs"`), `alpha`, `learning_rate_init`, `max_iter` y `random_state`.
+- Para comparar varios sets de hiperparámetros, se guardan en una lista de pares `(nombre, MLPClassifier(...))`, se recorren con un ciclo que ajusta con train y evalúa con test, y se guarda `[nombre, rec, pre, acc, auc]` en `resultados`. Al final se muestra `pd.DataFrame(resultados, columns=["Modelo", "Recall", "Precisión", "Accuracy", "AUC"])`.
 
 ## Exploración de datos para clasificación
 

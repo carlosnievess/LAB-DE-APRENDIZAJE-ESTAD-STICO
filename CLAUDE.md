@@ -57,7 +57,7 @@ Al empezar una actividad de esta materia, compara la carpeta con lo registrado a
 - Después dile al alumno, antes de empezar la actividad, qué notebook detectaste y qué quedó permitido.
 - Si no hay cambios, no digas nada y sigue con la actividad.
 
-Última revisión: commit `5a73eeb` (12 oct 2026).
+Última revisión: commit `7b1f034` (19 oct 2026).
 
 ## Notebooks registrados
 
@@ -66,7 +66,7 @@ PRIMER PARCIAL: `1. Regresión`, `2.Regresiónmúltiple`, `6 problemas de la reg
 `A04 - Análisis de residuos`, `Corrección_examen_1`, `Lab - R1`, `Lab - R2`, `Lab - R3`, `Lab - R4`,
 `Lab - R5`, `Pipeline`, `Regresión sin penalización y Ridge`.
 
-SEGUNDO PARCIAL: `04_Ingenieria_inversa`, `Lab - C1`, `Lab - C2`, `Regresión_logística`.
+SEGUNDO PARCIAL: `04_Ingenieria_inversa`, `Lab - C1`, `Lab - C2`, `Lab - C3`, `Regresión_logística`.
 
 ## Avance
 
@@ -77,3 +77,4 @@ SEGUNDO PARCIAL: `04_Ingenieria_inversa`, `Lab - C1`, `Lab - C2`, `Regresión_lo
 | Segundo | Lab - C1: regresión logística con Default | Terminado (4 oct 2026) |
 | Segundo | 04 Ingeniería inversa: rostros con SVM | Terminado (8 oct 2026) |
 | Segundo | Lab - C2: SVM, kernels y AUC | Terminado (11 oct 2026) |
+| Segundo | Lab - C3: perceptrón multicapa con Brain Tumor | Terminado (19 oct 2026) |

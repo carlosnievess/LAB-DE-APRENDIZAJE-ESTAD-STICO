@@ -49,6 +49,7 @@ Este es el uso principal durante los exámenes. Cuando una celda tenga un coment
 - Regresión logística simple y múltiple, errores estándar, estadístico z y p-value: `Lab - C1.ipynb`.
 - SVM con kernels, AUC y K-Fold con `Pipeline`: `Lab - C2.ipynb`.
 - SVM con PCA, búsqueda de parámetros, reporte de clasificación y matriz de confusión: `04_Ingenieria_inversa.ipynb`.
+- Perceptrón multicapa (`MLPClassifier`) con train-test 70/30, métricas y comparación de hiperparámetros: `Lab - C3.ipynb`.
 
 ## Herramientas que todavía no se han visto
 
