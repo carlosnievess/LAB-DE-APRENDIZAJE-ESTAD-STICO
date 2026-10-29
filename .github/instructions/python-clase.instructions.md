@@ -17,7 +17,9 @@ Estas reglas se aplican al código Python y a los notebooks. La lista reúne tod
 - `sklearn.svm`: `SVC`
 - `sklearn.neural_network`: `MLPClassifier`
 - `sklearn.decomposition`: `PCA` (importado como `PCA as RandomizedPCA`, como en clase)
-- `sklearn.model_selection`: `train_test_split`, `LeaveOneOut`, `KFold` y `GridSearchCV`
+- `sklearn.model_selection`: `train_test_split`, `LeaveOneOut`, `KFold`, `GridSearchCV` y `RandomizedSearchCV`
+- `sklearn.gaussian_process`: `GaussianProcessRegressor`, con `from sklearn.gaussian_process.kernels import RBF`
+- `optuna`, solo para búsqueda de hiperparámetros como en `Laboratorio de métodos de búsqueda.ipynb`
 - `sklearn.metrics`: `mean_squared_error`, `roc_auc_score`, `classification_report` y `confusion_matrix`
 - `sklearn.preprocessing`: `StandardScaler`, `OrdinalEncoder` y `OneHotEncoder`
 - `sklearn.compose`: `ColumnTransformer`
@@ -242,7 +244,48 @@ yfit = model.predict(Xtest)
 - Evalúa con `print(classification_report(ytest, yfit, target_names=...))`.
 - Para la matriz de confusión: `mat = confusion_matrix(ytest, yfit)` y `sns.heatmap(mat.T, square=True, annot=True, fmt="d", cbar=False, xticklabels=..., yticklabels=...)`.
 - Para mostrar imágenes: `fig, ax = plt.subplots(filas, columnas)`, un ciclo `for i, axi in enumerate(ax.flat)` con `axi.imshow(..., cmap="bone")` y `axi.set(xticks=[], yticks=[], xlabel=...)`. Para marcar errores: `color="black" if yfit[i] == ytest[i] else "red"`.
-- `GridSearchCV` y `make_pipeline` solo se usan en esta estructura. En los demás ejercicios se conservan `Pipeline` y el ciclo explícito de `KFold`.
+- `GridSearchCV` y `make_pipeline` se usan en esta estructura y en la búsqueda de hiperparámetros (sección siguiente). En los demás ejercicios se conservan `Pipeline` y el ciclo explícito de `KFold`.
+
+## Búsqueda de hiperparámetros
+
+Sigue `MLP con hiperparámetros(neuronas).ipynb` y `Laboratorio de métodos de búsqueda.ipynb`. El preprocesamiento y el modelo se juntan con `make_pipeline(preprocessor, mlp)` y la rejilla de neuronas se arma con ciclos anidados que agregan tuplas a una lista:
+
+```python
+capas = []
+for c1 in range(5, 16):
+    for c2 in range(10, 21):
+        capas.append((c1, c2))
+
+param_grid = {"mlpclassifier__hidden_layer_sizes": capas}
+grid = GridSearchCV(model, param_grid, scoring="roc_auc", cv=5)
+%time grid.fit(Xtrain, ytrain)
+print(grid.best_params_)
+print(grid.best_score_)
+
+model = grid.best_estimator_
+prob = model.predict_proba(Xtest)[:, 1]
+```
+
+- `cv` puede ser un número o un objeto `KFold(n_splits=10, shuffle=True, random_state=42)`; `n_jobs=-1` reparte los ajustes entre los núcleos cuando la rejilla es muy grande.
+- `pd.DataFrame(grid.cv_results_)` con `mean_test_score`, `std_test_score` y `rank_test_score` muestra todas las combinaciones.
+- `RandomizedSearchCV(model, param_grid, n_iter=100, scoring="roc_auc", cv=kf, random_state=42)` sortea `n_iter` combinaciones de la misma rejilla y deja los mismos atributos.
+- Optuna: una función `objective(trial)` pide los valores con `trial.suggest_int(nombre, minimo, maximo)`, evalúa con el ciclo explícito de `KFold` y regresa `np.mean(auc)`; luego `study = optuna.create_study(direction="maximize", sampler=optuna.samplers.TPESampler(seed=42))`, `study.optimize(objective, n_trials=100)`, `study.best_params`, `study.best_value` y `study.trials_dataframe()`.
+
+## Optimización bayesiana con proceso gaussiano
+
+Sigue `Optimización Bayesiana.ipynb`:
+
+```python
+kernel = 1.0*RBF(length_scale=1.0)
+gp = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=10)
+gp.fit(X, y)
+y_pred, desv = gp.predict(X_new, return_std=True)
+```
+
+- Las muestras se generan con `np.random.seed()` y `np.random.uniform(a, b, n).reshape([-1, 1])`, y el dominio con `np.linspace(...).reshape([-1, 1])`.
+- Los límites se grafican como `y_pred + 2*desv` y `y_pred - 2*desv` con `linestyle='--'`.
+- En un ciclo se elige el siguiente punto con `X_new[np.argmax(desv)]` (reducir incertidumbre), `X_new[np.argmax(y_pred)]` (máximo) o `X_new[np.argmin(y_pred)]` (mínimo), y se agrega con `np.hstack([X.reshape([-1]), x_sig]).reshape([-1, 1])`.
+- Se permite definir la función a optimizar con `def f(x): return ...`.
 
 ## Perceptrón multicapa
 
