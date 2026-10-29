@@ -38,7 +38,8 @@ siempre todo lo visto en los notebooks:
 2. Lee el enunciado completo del notebook y su código inicial.
 3. Revisa el notebook de referencia del tema en `.github/copilot-instructions.md`.
 4. Completa las celdas sin agregar análisis que no se pidieron.
-5. Ejecuta el notebook completo en orden (Restart & Run All) para que todas las celdas queden con salida.
+5. No ejecutes el notebook: solo agrega o cambia las celdas en el archivo y el alumno lo ejecuta. Ejecútalo
+   únicamente si lo pide en ese momento.
 6. Al terminar, propone actualizar la sección "Avance".
 
 ## Revisar cambios al empezar cada sesión
