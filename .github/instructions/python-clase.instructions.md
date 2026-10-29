@@ -17,7 +17,7 @@ Estas reglas se aplican al código Python y a los notebooks. La lista reúne tod
 - `sklearn.svm`: `SVC`
 - `sklearn.neural_network`: `MLPClassifier`
 - `sklearn.decomposition`: `PCA` (importado como `PCA as RandomizedPCA`, como en clase)
-- `sklearn.model_selection`: `train_test_split`, `LeaveOneOut`, `KFold`, `GridSearchCV` y `RandomizedSearchCV`
+- `sklearn.model_selection`: `train_test_split`, `LeaveOneOut`, `KFold`, `GridSearchCV`, `RandomizedSearchCV` y `cross_val_score`
 - `sklearn.gaussian_process`: `GaussianProcessRegressor`, con `from sklearn.gaussian_process.kernels import RBF`
 - `optuna`, solo para búsqueda de hiperparámetros como en `Laboratorio de métodos de búsqueda.ipynb`
 - `sklearn.metrics`: `mean_squared_error`, `roc_auc_score`, `classification_report` y `confusion_matrix`
@@ -92,7 +92,7 @@ Para MSE utiliza `mean_squared_error(y_real, y_pred)`. Distingue claramente entr
 
 Implementa LOOCV con `LeaveOneOut()` y K-Fold con `KFold()` mediante ciclos explícitos. En cada vuelta, separa con `.iloc`, ajusta el modelo, predice y guarda el MSE. Al final calcula `np.mean()` y `np.std()`.
 
-No uses `cross_val_score` ni funciones que sustituyan el ciclo visto en `Lab - R5.ipynb`.
+`cross_val_score` se vio en `Optimización Bayesiana.ipynb` solo para el AUC con K-Fold, como `cross_val_score(pipeline, X, y, cv=kf, scoring="roc_auc")` y después `np.mean(scores)`. Úsalo cuando haya que evaluar un modelo con AUC y K-Fold. Para el MSE y para LOOCV conserva el ciclo visto en `Lab - R5.ipynb`, porque ahí no se ha visto otro `scoring`. No uses `cross_validate`.
 
 ## ColumnTransformer y Pipeline
 
@@ -219,6 +219,7 @@ for nombre, modelo in modelos:
 - Con más de dos clases, como Iris, usa `prob = pipeline.predict_proba(X[test])` completo y `roc_auc_score(y[test], prob, multi_class="ovr", average="macro")`.
 - Si el dataset viene ordenado por clase, usa `shuffle=True` en `KFold`.
 - Presenta `resultados` como `pd.DataFrame` con las columnas `Modelo`, `AUC promedio` y `Desviación estándar`.
+- Desde `Optimización Bayesiana.ipynb` el ciclo interno se puede cambiar por `scores = cross_val_score(pipeline, X, y, cv=kf, scoring="roc_auc")`, con el `pipeline` armado una sola vez, y guardar `np.mean(scores)` y `np.std(scores)`.
 
 ## SVM con PCA, búsqueda de parámetros y evaluación
 
@@ -244,7 +245,7 @@ yfit = model.predict(Xtest)
 - Evalúa con `print(classification_report(ytest, yfit, target_names=...))`.
 - Para la matriz de confusión: `mat = confusion_matrix(ytest, yfit)` y `sns.heatmap(mat.T, square=True, annot=True, fmt="d", cbar=False, xticklabels=..., yticklabels=...)`.
 - Para mostrar imágenes: `fig, ax = plt.subplots(filas, columnas)`, un ciclo `for i, axi in enumerate(ax.flat)` con `axi.imshow(..., cmap="bone")` y `axi.set(xticks=[], yticks=[], xlabel=...)`. Para marcar errores: `color="black" if yfit[i] == ytest[i] else "red"`.
-- `GridSearchCV` y `make_pipeline` se usan en esta estructura y en la búsqueda de hiperparámetros (sección siguiente). En los demás ejercicios se conservan `Pipeline` y el ciclo explícito de `KFold`.
+- `GridSearchCV` y `make_pipeline` se usan en esta estructura y en la búsqueda de hiperparámetros (sección siguiente). En los demás ejercicios se conserva `Pipeline`, evaluado con el ciclo explícito de `KFold` o, para el AUC, con `cross_val_score`.
 
 ## Búsqueda de hiperparámetros
 
@@ -286,6 +287,26 @@ y_pred, desv = gp.predict(X_new, return_std=True)
 - Los límites se grafican como `y_pred + 2*desv` y `y_pred - 2*desv` con `linestyle='--'`.
 - En un ciclo se elige el siguiente punto con `X_new[np.argmax(desv)]` (reducir incertidumbre), `X_new[np.argmax(y_pred)]` (máximo) o `X_new[np.argmin(y_pred)]` (mínimo), y se agrega con `np.hstack([X.reshape([-1]), x_sig]).reshape([-1, 1])`.
 - Se permite definir la función a optimizar con `def f(x): return ...`.
+
+Para buscar hiperparámetros, como `C` y `gamma` de un `SVC(kernel="rbf")`, la función objetivo recibe `H` y regresa el AUC promedio:
+
+```python
+def objetivo(H):
+    C = H[0]
+    gamma = H[1]
+    # crear modelo
+    pipeline = Pipeline(steps=[
+        ("preprocessor", preprocessor),
+        ("model", SVC(kernel="rbf", C=C, gamma=gamma, probability=True, random_state=42))
+    ])
+    # evaluar modelo
+    scores = cross_val_score(pipeline, X, y, cv=kf, scoring="roc_auc")
+    return np.mean(scores)
+```
+
+- Las combinaciones candidatas se arman con ciclos anidados que agregan `[c, g]` a una lista y luego `H_new = np.array(candidatos)`.
+- `H` es una lista de `[C, gamma]` que empieza con las muestras iniciales; se ajusta con `gp.fit(np.array(H), auc)`.
+- En `for i in range(30)` se elige `h_sig = H_new[np.argmax(y_pred + 2*desv)]`, se evalúa `objetivo(h_sig)` y se agregan `H.append([h_sig[0], h_sig[1]])` y el AUC.
 
 ## Perceptrón multicapa
 

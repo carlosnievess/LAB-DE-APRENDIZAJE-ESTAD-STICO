@@ -14,7 +14,7 @@ eficiente o elegante.
   2. El enunciado o el código inicial de la actividad nueva.
 - Lo que aparece en un notebook queda permitido para todas las actividades posteriores.
 - No uses atajos ni versiones más sofisticadas de lo visto, aunque den el mismo resultado: por ejemplo,
-  `cross_val_score` en lugar del ciclo de K-Fold, comprensiones o funciones propias donde en clase se
+  `cross_validate` en lugar del ciclo de K-Fold, comprensiones o funciones propias donde en clase se
   escribió el paso a paso.
 - Si lo vimos de forma manual y después automatizada, usa la forma más reciente vista, salvo que el
   enunciado pida la manual.

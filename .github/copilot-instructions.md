@@ -52,13 +52,13 @@ Este es el uso principal durante los exámenes. Cuando una celda tenga un coment
 - Perceptrón multicapa (`MLPClassifier`) con train-test 70/30, métricas y comparación de hiperparámetros: `Lab - C3.ipynb`.
 - Búsqueda de neuronas con `GridSearchCV`, `make_pipeline` y AUC de test: `MLP con hiperparámetros(neuronas).ipynb`.
 - Comparación de `GridSearchCV`, `RandomizedSearchCV` y Optuna con K-Fold de 10: `Laboratorio de métodos de búsqueda.ipynb`.
-- Optimización bayesiana con `GaussianProcessRegressor` y selección del siguiente punto: `Optimización Bayesiana.ipynb`.
+- Optimización bayesiana con `GaussianProcessRegressor` y selección del siguiente punto, incluida la búsqueda de `C` y `gamma` de un SVC con `objetivo(H)` y `cross_val_score`: `Optimización Bayesiana.ipynb`.
 
 ## Herramientas que todavía no se han visto
 
-No uses `PolynomialFeatures`, `cross_val_score`, `cross_validate`, clases personalizadas ni otras herramientas que no aparezcan en la lista autorizada. Esta lista cambia conforme se ven temas nuevos en clase: lo que aparezca en un notebook nuevo de la carpeta pasa a estar autorizado.
+No uses `PolynomialFeatures`, `cross_validate`, clases personalizadas ni otras herramientas que no aparezcan en la lista autorizada. Esta lista cambia conforme se ven temas nuevos en clase: lo que aparezca en un notebook nuevo de la carpeta pasa a estar autorizado.
 
 - No uses Statsmodels salvo que la actividad pida inferencia, significancia, intervalos, influencia, leverage, VIF o un resumen estadístico de una regresión lineal, y exista un ejemplo equivalente en los notebooks.
-- No reemplaces los ciclos de validación cruzada vistos en clase por funciones que oculten el procedimiento.
+- `cross_val_score` solo se ha visto con `scoring="roc_auc"` y un `KFold`; para el MSE y LOOCV conserva los ciclos explícitos vistos en clase.
 - No cambies una estructura que ya funciona únicamente para hacerla más avanzada, corta o elegante.
 - Antes de terminar una respuesta de chat o una edición, comprueba que cada función propuesta aparezca en la lista autorizada y que la solución responda solamente a lo solicitado.
