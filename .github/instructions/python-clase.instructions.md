@@ -30,7 +30,73 @@ Estas reglas se aplican al código Python y a los notebooks. La lista reúne tod
 
 ## Pandas y revisión del dataset
 
-Se pueden usar `pd.read_csv()`, `pd.read_excel()`, `head()`, `tail()`, `shape`, `columns`, `dtypes`, `info()`, `describe()`, `isna().sum()`, `duplicated().sum()`, `drop_duplicates()`, `dropna()`, `drop()`, `value_counts()`, `quantile()`, `median()`, `std()`, `map()`, `astype()`, limpieza de texto con `.str`, `pd.DataFrame()` y `pd.concat()`.
+Se pueden usar `pd.read_csv()`, `pd.read_excel()`, `head()`, `tail()`, `shape`, `columns`, `dtypes`, `info()`, `describe()`, `isna().sum()`, `duplicated().sum()`, `drop_duplicates()`, `dropna()`, `drop()`, `copy()`, `unique()`, `nunique()`, `value_counts()` (también con `dropna=False` y `.sort_index()`), `mean()`, `min()`, `max()`, `quantile()`, `median()`, `mode()[0]`, `std()`, `corr()`, `fillna()`, `replace({...})`, `map()`, `astype()`, filtros con `.loc[condición] = valor`, limpieza de texto con `.str.replace(",", ".", regex=False)`, `.str.lower()`, `.str.upper()`, `.str.strip()` y `.str.rstrip(" }{")`, `np.where()`, `np.log1p()`, `pd.DataFrame()` y `pd.concat()`.
+
+### Estructura del EDA y la limpieza
+
+Sigue `Lab - R3.ipynb`, `Corrección_examen_1.ipynb` y `proyecto_bank_marketing.ipynb`:
+
+```python
+# revisar el dataset
+df = pd.read_csv("archivo.csv")
+print("Tamaño:", df.shape)
+print(df.dtypes)
+df.info()
+df.describe()
+df.head()
+
+# faltantes y duplicados
+print(df.isna().sum())
+print("Duplicados:", df.duplicated().sum())
+
+# categorías de cada variable de texto
+for col in categorical_cols:
+    print(col, "->", df[col].unique())
+
+# corregir texto: coma decimal, mayúsculas, espacios y errores de dedo
+df["col"] = df["col"].str.replace(",", ".", regex=False).astype(float)
+gen = df["cat"].str.lower()
+gen = gen.str.rstrip(" }{")
+gen.loc[gen == "error"] = "correcto"
+gen.unique()
+df["cat"] = gen
+
+# quitar duplicados y faltantes, o rellenar con la mediana y la moda
+df = df.drop_duplicates()
+df = df.dropna()
+df["num"] = df["num"].fillna(df["num"].median())
+df["cat"] = df["cat"].fillna(df["cat"].mode()[0])
+
+# distribuciones, resumen numérico y frecuencias
+df.hist(figsize=(12, 8), bins=10, edgecolor="black")
+plt.tight_layout()
+plt.show()
+
+res = pd.DataFrame({
+    "Media": df[num].mean(),
+    "Mediana": df[num].median(),
+    "Desviación estándar": df[num].std(),
+    "Mínimo": df[num].min(),
+    "Máximo": df[num].max()
+})
+display(res.round(3))
+
+for c in cat:
+    print(df[c].value_counts().sort_index())
+    print("Valores únicos:", df[c].unique())
+
+# respuesta, relación con un factor y correlación
+print(df["y"].value_counts())
+df["y"].value_counts().plot(kind="bar")
+plt.show()
+df.boxplot(column="factor", by="y")
+plt.suptitle("")
+plt.show()
+df[num].corr().round(2)
+```
+
+- Si al rellenar faltantes se valida con K-Fold, la mediana y la moda se calculan dentro del ciclo solo con `X_train` y se aplican a `X_test`, como en `Corrección_examen_1.ipynb`.
+- Si la respuesta es texto, se convierte con `y = (df["y"] == "yes").astype(int)`.
 
 Para separar variables, conserva la estructura vista en clase:
 
@@ -307,6 +373,7 @@ def objetivo(H):
 - Las combinaciones candidatas se arman con ciclos anidados que agregan `[c, g]` a una lista y luego `H_new = np.array(candidatos)`.
 - `H` es una lista de `[C, gamma]` que empieza con las muestras iniciales; se ajusta con `gp.fit(np.array(H), auc)`.
 - En `for i in range(30)` se elige `h_sig = H_new[np.argmax(y_pred + 2*desv)]`, se evalúa `objetivo(h_sig)` y se agregan `H.append([h_sig[0], h_sig[1]])` y el AUC.
+- En `proyecto_bank_marketing.ipynb` los hiperparámetros viajan como exponentes (`C = 10**H[0]`) y se usa `class_weight="balanced"` en `LogisticRegression` y `SVC` cuando la respuesta está desbalanceada. En Optuna también se usó `trial.suggest_float(nombre, minimo, maximo, log=True)`.
 
 ## Perceptrón multicapa
 

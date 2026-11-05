@@ -38,7 +38,7 @@ Este es el uso principal durante los exámenes. Cuando una celda tenga un coment
 - Escalamiento: `A02 - Escalamiento.ipynb`.
 - Variables categóricas: `A03 - Codificacion de variables categoricas.ipynb`.
 - Residuos y seis problemas de la regresión: `A04 - Análisis de residuos.ipynb` y `6 problemas de la regresion lineal.ipynb`.
-- Limpieza y análisis exploratorio: `Lab - R3.ipynb`.
+- Limpieza y análisis exploratorio: `Lab - R3.ipynb` (con `unique()`, `.str` y filtros), `Corrección_examen_1.ipynb` (relleno con mediana y moda) y `proyecto_bank_marketing.ipynb` (EDA para clasificación con `corr()` y `boxplot` por clase).
 - Separación de datos, Ridge y Lasso: `Lab - R4.ipynb` y `Regresión sin penalización y Ridge.ipynb`.
 - Preprocesamiento combinado y Pipeline: `Pipeline.ipynb`.
 - LOOCV y K-Fold: `Lab - R5.ipynb`.
@@ -52,6 +52,7 @@ Este es el uso principal durante los exámenes. Cuando una celda tenga un coment
 - Perceptrón multicapa (`MLPClassifier`) con train-test 70/30, métricas y comparación de hiperparámetros: `Lab - C3.ipynb`.
 - Búsqueda de neuronas con `GridSearchCV`, `make_pipeline` y AUC de test: `MLP con hiperparámetros(neuronas).ipynb`.
 - Comparación de `GridSearchCV`, `RandomizedSearchCV` y Optuna con K-Fold de 10: `Laboratorio de métodos de búsqueda.ipynb`.
+- Proyecto completo de clasificación (EDA, limpieza, 70/30, regresión logística, SVC y MLP optimizados con proceso gaussiano y evaluación por umbral): `proyecto-bank-marketing/proyecto_bank_marketing.ipynb`.
 - Optimización bayesiana con `GaussianProcessRegressor` y selección del siguiente punto, incluida la búsqueda de `C` y `gamma` de un SVC con `objetivo(H)` y `cross_val_score`: `Optimización Bayesiana.ipynb`.
 
 ## Herramientas que todavía no se han visto
