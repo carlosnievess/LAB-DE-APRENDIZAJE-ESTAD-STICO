@@ -1,0 +1,241 @@
+titulo,genero,anio_estreno,presupuesto_millones_usd,calificacion_publico
+La Última Estación,Ciencia ficción,2011,33.94,7.1
+Horizonte de Ceniza,Drama,2024,22.44,6.1
+El Jardín de los Ecos,Comedia,2024,9.56,5.8
+Noche de Mercurio,Terror,2009,51.95,3.8
+Cartas desde Orión,Documental,2023,38.06,7.1
+La Ciudad Sumergida,Acción,2020,68.43,5.4
+Código Aurora,Ciencia ficción,2015,109.16,5.7
+Los Días de Sal,Ciencia ficción,2020,45.67,6.3
+El Tren de Medianoche, drama ,2019,32.04,5.4
+Bajo la Misma Luna,Ciencia ficción,2024,85.69,6.7
+Proyecto Lázaro,Ciencia ficción,2009,9.74,6.0
+La Casa del Viento,Comedia,2001,10.28,5.6
+Mareas de Invierno,Drama,2011,17.37,7.1
+El Último Cartógrafo,Acción,2007,9.09,5.6
+Sombras en el Andén,Comedia,2012,29.2,4.8
+La Teoría del Silencio,Ciencia ficción,2022,62.29,7.3
+Kilómetro Cero,Comedia,2024,14.24,6.9
+El Archivo de las Nubes,Documental,2016,,6.8
+Después del Eclipse,Acción,2015,23.16,5.0
+La Ruta Invisible,Ciencia ficción,2007,36.5,5.3
+Pájaros de Neón,Acción,2000,28.17,5.5
+El Mapa de los Recuerdos,Drama,2009,31.35,6.8
+Frecuencia Cero,Animación,2011,25.99,5.0
+La Isla de Cristal,Acción,2005,78.42,7.5
+Los Guardianes del Tiempo,Acción,2019,5.54,5.4
+Una Señal en la Niebla,Drama,2004,7.11,6.6
+El Peso del Agua,Ciencia ficción,2011,32.04,6.2
+La Máquina de los Sueños,Documental,2003,87.98,7.6
+Verano en Marte,Documental,2008,3.32,5.7
+El Último Aplauso,Comedia,2024,86.06,5.6
+La Última Estación II,Terror,2016,18.31,5.3
+Horizonte de Ceniza II,CIENCIA FICCION,2010,41.03,4.6
+El Jardín de los Ecos II,Ciencia ficción,2005,24.17,7.1
+Noche de Mercurio II,Terror,2001,18.75,6.2
+Cartas desde Orión II,Drama,2022,19.45,6.6
+La Ciudad Sumergida II,Comedia,2012,11.4,5.5
+Código Aurora II,Terror,2015,9.51,6.9
+Los Días de Sal II,Acción,2007,40.55,6.6
+El Tren de Medianoche II,Terror,2001,19.29,4.7
+Bajo la Misma Luna II,Acción,2005,56.03,6.2
+Proyecto Lázaro II,Comedia,2003,8.72,5.9
+La Casa del Viento II,Terror,2005,17.3,4.7
+Mareas de Invierno II,Comedia,2003,15.61,
+El Último Cartógrafo II,Drama,2014,4.85,6.5
+Sombras en el Andén II,Acción,2002,119.16,6.4
+La Teoría del Silencio II,Documental,2014,11.97,6.9
+Kilómetro Cero II,Ciencia ficción,2014,50.45,4.9
+El Archivo de las Nubes II,Documental,2022,15.6,6.1
+Después del Eclipse II,Comedia,2012,14.9,6.1
+La Ruta Invisible II,Acción,2002,21.78,4.3
+Pájaros de Neón II,Comedia,2008,18.43,6.8
+El Mapa de los Recuerdos II,Romance,2012,10.74,5.3
+Frecuencia Cero II,Comedia,2007,30.81,5.1
+La Isla de Cristal II,Drama,2007,10.76,6.0
+Los Guardianes del Tiempo II,Terror,2006,28.29,4.7
+Una Señal en la Niebla II,Acción,2012,12.83,5.0
+El Peso del Agua II,Comedia,2022,26.07,7.9
+La Máquina de los Sueños II,comedia,2023,38.99,6.4
+Verano en Marte II,Acción,2017,70.96,6.5
+El Último Aplauso II,Comedia,2023,32.13,5.7
+La Última Estación III,Romance,2024,14.31,5.6
+Horizonte de Ceniza III,Ciencia ficción,2019,60.7,5.2
+El Jardín de los Ecos III,Ciencia ficción,2021,44.7,6.0
+Noche de Mercurio III,Ciencia ficción,2019,169.37,7.0
+Cartas desde Orión III,Romance,2011,11.07,7.0
+La Ciudad Sumergida III,Drama,2006,17.25,4.9
+Código Aurora III,Terror,2023,21.19,4.0
+Los Días de Sal III,Documental,2012,17.78,7.2
+El Tren de Medianoche III,Ciencia ficción,2002,15.87,5.2
+Bajo la Misma Luna III,Documental,2020,2.99,6.9
+Proyecto Lázaro III,Comedia,2001,43.38,6.3
+La Casa del Viento III,Drama,2019,12.74,7.5
+Mareas de Invierno III,Drama,2007,11.47,6.0
+El Último Cartógrafo III,Ciencia ficción,2014,32.71,6.2
+Sombras en el Andén III,Acción,2015,21.74,5.0
+La Teoría del Silencio III,Comedia,2021,8.07,5.4
+Kilómetro Cero III,Animación,2023,51.05,6.4
+El Archivo de las Nubes III,Drama,2021,12.38,5.3
+Después del Eclipse III,Drama,2011,18.63,4.8
+La Ruta Invisible III,Drama,2009,6.6,6.0
+Pájaros de Neón III,Acción,2012,29.44,6.5
+El Mapa de los Recuerdos III,Comedia,2011,24.09,6.4
+Frecuencia Cero III,Terror,2008,4.85,6.9
+La Isla de Cristal III,Drama,2007,14.59,5.9
+Los Guardianes del Tiempo III,Romance,2008,13.02,6.0
+Una Señal en la Niebla III,Documental,2020,14.5,7.4
+El Peso del Agua III,Ciencia ficción,2007,37.77,6.8
+La Máquina de los Sueños III,Ciencia ficción,2012,21.11,5.4
+Verano en Marte III,Animación,2004,66.7,6.2
+El Último Aplauso III,Accion,2014,12.27,6.5
+La Última Estación 4,Terror,2023,3.87,5.3
+Horizonte de Ceniza 4,Animación,2012,30.23,6.1
+El Jardín de los Ecos 4,Drama,2010,14.18,5.9
+Noche de Mercurio 4,Romance,2006,21.17,5.0
+Cartas desde Orión 4,Acción,2007,34.73,5.7
+La Ciudad Sumergida 4,Drama,2024,23.92,6.3
+Código Aurora 4,Drama,2003,,6.8
+Los Días de Sal 4,Documental,2013,6.7,6.7
+El Tren de Medianoche 4,Romance,2011,18.76,6.1
+Bajo la Misma Luna 4,Romance,2024,8.99,6.4
+Proyecto Lázaro 4,Ciencia ficción,2011,71.15,5.4
+La Casa del Viento 4,Comedia,2005,5.44,6.2
+Mareas de Invierno 4,Acción,2011,48.62,7.5
+El Último Cartógrafo 4,Drama,2022,13.78,5.8
+Sombras en el Andén 4,Drama,2006,12.06,6.3
+La Teoría del Silencio 4,Romance,2008,19.42,7.1
+Kilómetro Cero 4,Acción,2016,33.78,7.2
+El Archivo de las Nubes 4,Animación,2008,23.92,6.8
+Después del Eclipse 4,Comedia,2000,45.88,7.4
+La Ruta Invisible 4,Ciencia ficción,2017,114.12,6.0
+Pájaros de Neón 4,Terror,2016,6.88,5.2
+El Mapa de los Recuerdos 4,Acción,2018,34.68,6.8
+Frecuencia Cero 4,Acción,2021,18.82,6.4
+La Isla de Cristal 4,Documental,2024,3.85,6.8
+Los Guardianes del Tiempo 4,Drama,2001,27.66,5.0
+Una Señal en la Niebla 4,Comedia,2023,17.37,6.7
+El Peso del Agua 4,Terror,2018,21.04,6.7
+La Máquina de los Sueños 4,Romance,2023,7.91,4.8
+Verano en Marte 4,Terror,2008,23.94,6.2
+El Último Aplauso 4,Acción,2015,41.44,5.7
+La Última Estación 5,Drama,2024,8.51,7.4
+Horizonte de Ceniza 5,Drama,2009,11.94,7.0
+El Jardín de los Ecos 5,Drama,2023,70.47,5.9
+Noche de Mercurio 5,Documental,2003,12.51,7.2
+Cartas desde Orión 5,Terrorr,2006,39.42,5.7
+La Ciudad Sumergida 5,Comedia,2009,16.06,6.3
+Código Aurora 5,Acción,2023,15.59,5.9
+Los Días de Sal 5,Comedia,2007,42.03,6.4
+El Tren de Medianoche 5,Drama,2016,27.59,6.3
+Bajo la Misma Luna 5,Animación,2015,44.92,5.3
+Proyecto Lázaro 5,Ciencia ficción,2005,42.4,5.2
+La Casa del Viento 5,Documental,2013,12.08,7.3
+Mareas de Invierno 5,Acción,2013,58.93,4.8
+El Último Cartógrafo 5,Acción,2002,10.99,4.1
+Sombras en el Andén 5,Romance,2006,54.51,5.3
+La Teoría del Silencio 5,Drama,2012,36.55,6.2
+Kilómetro Cero 5,Terror,2017,8.0,7.6
+El Archivo de las Nubes 5,Acción,2020,42.42,
+Después del Eclipse 5,Comedia,2016,5.31,5.4
+La Ruta Invisible 5,Ciencia ficción,2016,37.18,6.6
+Pájaros de Neón 5,Ciencia ficción,2003,48.67,6.4
+El Mapa de los Recuerdos 5,Acción,2001,92.28,4.8
+Frecuencia Cero 5,Animación,2023,31.28,6.8
+La Isla de Cristal 5,Terror,2002,11.23,5.9
+Los Guardianes del Tiempo 5,Ciencia ficción,2024,28.78,5.9
+Una Señal en la Niebla 5,Documental,2004,9.3,5.6
+El Peso del Agua 5,Terror,2011,10.55,6.1
+La Máquina de los Sueños 5,Drama,2020,27.97,6.0
+Verano en Marte 5,Romance,2009,19.27,4.9
+El Último Aplauso 5,Romance,2024,17.93,5.5
+La Última Estación 6,Terror,2001,14.66,5.1
+Horizonte de Ceniza 6,Ciencia ficción,2010,151.83,6.4
+El Jardín de los Ecos 6,Ciencia ficción,2015,16.14,6.2
+Noche de Mercurio 6,Ciencia ficción,2024,77.03,6.7
+Cartas desde Orión 6,Documental,2013,3.48,8.2
+La Ciudad Sumergida 6,Comedia,2021,190.39,7.9
+Código Aurora 6,Ciencia ficción,2003,26.86,5.7
+Los Días de Sal 6,Drama,2003,18.14,6.3
+El Tren de Medianoche 6,Ciencia ficción,2007,44.04,6.9
+Bajo la Misma Luna 6,Drama,2018,27.57,5.5
+Proyecto Lázaro 6,Drama,2005,8.49,6.5
+La Casa del Viento 6,Comedia,2015,60.16,7.7
+Mareas de Invierno 6,Acción,2020,36.84,6.1
+El Último Cartógrafo 6,Romance,2013,21.94,4.9
+Sombras en el Andén 6,Drama,2022,77.88,5.2
+La Teoría del Silencio 6,Drama,2016,10.29,5.5
+Kilómetro Cero 6,Fantasia,2001,48.8,6.1
+El Archivo de las Nubes 6,Drama,2024,68.41,6.1
+Después del Eclipse 6,Acción,2018,64.3,5.4
+La Ruta Invisible 6,Romance,2004,10.85,5.0
+Pájaros de Neón 6,Documental,2019,48.87,6.1
+El Mapa de los Recuerdos 6,Ciencia ficción,2023,100.78,6.8
+Frecuencia Cero 6,Terror,2019,9.75,4.6
+La Isla de Cristal 6,Comedia,2008,18.15,4.9
+Los Guardianes del Tiempo 6,Acción,2022,84.78,5.5
+Una Señal en la Niebla 6,Comedia,2019,28.95,6.2
+El Peso del Agua 6,Ciencia ficción,2014,23.89,6.7
+La Máquina de los Sueños 6,Romance,2006,13.24,5.1
+Verano en Marte 6,Drama,2004,48.32,5.4
+El Último Aplauso 6,Ciencia ficción,2006,63.67,6.0
+La Última Estación 7,Comedia,2003,3.43,5.9
+Horizonte de Ceniza 7,Terror,2001,,5.2
+El Jardín de los Ecos 7,Acción,2015,54.06,6.1
+Noche de Mercurio 7,Acción,2016,34.55,6.4
+Cartas desde Orión 7,Acción,2009,39.55,5.5
+La Ciudad Sumergida 7,Acción,2009,72.1,5.3
+Código Aurora 7,Acción,2002,23.14,4.9
+Los Días de Sal 7,Romance,2010,15.63,6.1
+El Tren de Medianoche 7,Acción,2012,82.5,5.4
+Bajo la Misma Luna 7,Terror,2024,27.68,6.6
+Proyecto Lázaro 7,Drama,2000,12.07,6.0
+La Casa del Viento 7,Animación,2007,38.81,5.8
+Mareas de Invierno 7,Romance,2023,29.63,5.3
+El Último Cartógrafo 7,Drama,2020,17.08,5.6
+Sombras en el Andén 7,Animación,2014,140.5,6.3
+La Teoría del Silencio 7,Comedia,2013,44.6,6.0
+Kilómetro Cero 7,Drama,2012,11.09,6.7
+El Archivo de las Nubes 7,Comedia,2003,14.4,5.5
+Después del Eclipse 7,Romance,2010,8.47,6.4
+La Ruta Invisible 7,Terror,2006,16.74,4.3
+Pájaros de Neón 7,Romance,2000,18.97,5.7
+El Mapa de los Recuerdos 7,Terror,2002,14.9,6.6
+Frecuencia Cero 7,Terror,2003,14.91,6.5
+La Isla de Cristal 7,romance,2005,16.9,7.1
+Los Guardianes del Tiempo 7,Romance,2022,6.78,7.5
+Una Señal en la Niebla 7,Drama,2021,94.81,7.4
+El Peso del Agua 7,Documental,2016,6.25,6.4
+La Máquina de los Sueños 7,Comedia,2020,23.75,6.5
+Verano en Marte 7,Animación,2012,12.27,6.1
+El Último Aplauso 7,Comedia,2014,31.81,7.1
+La Última Estación 8,Ciencia ficción,2001,28.2,5.8
+Horizonte de Ceniza 8,Comedia,2006,18.58,4.8
+El Jardín de los Ecos 8,Drama,2008,34.59,6.9
+Noche de Mercurio 8,Documental,2016,8.52,7.1
+Cartas desde Orión 8,Comedia,2009,42.7,5.7
+La Ciudad Sumergida 8,Drama,2016,34.87,6.0
+Código Aurora 8,Ciencia ficción,2021,70.05,6.9
+Los Días de Sal 8,Comedia,2015,25.74,7.8
+El Tren de Medianoche 8,Comedia,2016,52.46,4.1
+Bajo la Misma Luna 8,Comedia,20O8,13.61,6.3
+Proyecto Lázaro 8,Acción,2005,86.09,5.7
+La Casa del Viento 8,Drama,2007,6.29,6.4
+Mareas de Invierno 8,Acción,2005,126.48,5.4
+El Último Cartógrafo 8,Animación,2011,65.25,5.9
+Sombras en el Andén 8,Ciencia ficción,2013,18.81,7.0
+La Teoría del Silencio 8,Acción,2018,51.99,6.4
+Kilómetro Cero 8,Acción,2008,73.04,6.3
+El Archivo de las Nubes 8,Documental,2014,13.26,6.4
+Después del Eclipse 8,Terror,2015,10.69,6.7
+La Ruta Invisible 8,Ciencia ficción,2008,35.03,4.6
+Pájaros de Neón 8,Terror,2015,25.04,6.8
+El Mapa de los Recuerdos 8,Romance,2020,"45,7",4.9
+Frecuencia Cero 8,Romance,2007,17.58,6.3
+La Isla de Cristal 8,Documental,2011,15.72,6.3
+Los Guardianes del Tiempo 8,Terror,2016,8.05,6.2
+Una Señal en la Niebla 8,Romance,2012,12.01,"8,4"
+El Peso del Agua 8,Comedia,2004,3.38,5.4
+La Máquina de los Sueños 8,Acción,2016,21.4,4.9
+Verano en Marte 8,Animación,2007,6.14,5.7
+El Último Aplauso 8,Comedia,2006,24.21,5.6
