@@ -54,6 +54,7 @@ Este es el uso principal durante los exámenes. Cuando una celda tenga un coment
 - Comparación de `GridSearchCV`, `RandomizedSearchCV` y Optuna con K-Fold de 10: `Laboratorio de métodos de búsqueda.ipynb`.
 - Proyecto completo de clasificación (EDA, limpieza, 70/30, regresión logística, SVC y MLP optimizados con proceso gaussiano y evaluación por umbral): `proyecto-bank-marketing/proyecto_bank_marketing.ipynb`.
 - Optimización bayesiana con `GaussianProcessRegressor` y selección del siguiente punto, incluida la búsqueda de `C` y `gamma` de un SVC con `objetivo(H)` y `cross_val_score`: `Optimización Bayesiana.ipynb`.
+- `SEGUNDO PARCIAL/EXAMEN2.ipynb` es un examen del alumno y no sirve como referencia. No copies de ahí comprensiones de listas, `np.vstack`, `size=(n, 3)` en `np.random.uniform`, `replace(..., regex=True)` ni `fillna(..., inplace=True)`; para la optimización bayesiana usa la estructura de `Optimización Bayesiana.ipynb` y para la limpieza la de `Lab - R3.ipynb`.
 
 ## Herramientas que todavía no se han visto
 

@@ -58,7 +58,7 @@ Al empezar una actividad de esta materia, compara la carpeta con lo registrado a
 - Después dile al alumno, antes de empezar la actividad, qué notebook detectaste y qué quedó permitido.
 - Si no hay cambios, no digas nada y sigue con la actividad.
 
-Última revisión: commit `45e9e1e` (5 nov 2026).
+Última revisión: commit `84b949f` (12 nov 2026).
 
 ## Notebooks registrados
 
@@ -69,7 +69,11 @@ PRIMER PARCIAL: `1. Regresión`, `2.Regresiónmúltiple`, `6 problemas de la reg
 
 SEGUNDO PARCIAL: `04_Ingenieria_inversa`, `Lab - C1`, `Lab - C2`, `Lab - C3`,
 `Laboratorio de métodos de búsqueda`, `MLP con hiperparámetros(neuronas)`, `Optimización Bayesiana`,
-`Regresión_logística`, `proyecto-bank-marketing/proyecto_bank_marketing`.
+`Regresión_logística`, `proyecto-bank-marketing/proyecto_bank_marketing`, `EXAMEN2`.
+
+`EXAMEN2` es el segundo examen del alumno y no cuenta como material de clase, así que no agrega nada a
+la lista de lo permitido (sus comprensiones de listas, `np.vstack`, `size=(n, 3)` en
+`np.random.uniform`, `replace(..., regex=True)` y `fillna(..., inplace=True)` siguen fuera).
 
 ## Avance
 
@@ -84,3 +88,5 @@ SEGUNDO PARCIAL: `04_Ingenieria_inversa`, `Lab - C1`, `Lab - C2`, `Lab - C3`,
 | Segundo | MLP con hiperparámetros (neuronas) y Optimización Bayesiana (clase) | Terminados |
 | Segundo | Laboratorio de métodos de búsqueda: GridSearchCV, RandomizedSearchCV y Optuna con College | Terminado (29 oct 2026) |
 | Segundo | Proyecto 2: Bank Marketing con regresión logística, SVC y MLP optimizados con proceso gaussiano | Terminado |
+| Segundo | Examen 2: optimización bayesiana y EDA de reseñas de películas | Presentado (5 nov 2026) |
+| Tercero | Actividad de árboles de decisión: varianza de la estatura por género con DATASET-SALON | En curso |
